@@ -7,14 +7,15 @@ const Footer: FC<RouteComponentProps> = (props: any) => {
 
   function handleSubmit(e: any) {
     e.preventDefault()
-    console.log(props)
+    setUsername('')
+
     props.history.push(`/perfil/${username}`)
   }
 
   return (
     <footer className="footer-container">
       <form onSubmit={(e: any) => handleSubmit(e)} className="footer-form">
-        <input type="text" className="footer-input" placeholder="Pesquisar usuário" onChange={e => setUsername(e.target.value)} />
+        <input id="footer-input" type="text" className="footer-input" placeholder="Pesquisar usuário" value={username} onChange={e => setUsername(e.target.value)} />
         <button type='submit' className="footer-button">
           Procurar perfil
         </button>

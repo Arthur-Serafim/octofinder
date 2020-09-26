@@ -10,7 +10,7 @@ const Profile: FC = (props: any) => {
     (async () => {
       let data = await searchService.loadProfile(props.match.params.name)
 
-      if (data.message === "Not Found") props.history.push('/404')
+      if (data.message === "Not Found") props.history.push('/limbo')
 
       profile.current = data
     })()
