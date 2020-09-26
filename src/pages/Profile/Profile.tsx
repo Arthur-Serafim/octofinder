@@ -1,33 +1,20 @@
 import React, { useEffect, useState, FunctionComponent as FC } from 'react';
 import SearchService from '../../services/SearchService'
 import Loading from '../../components/Loading/Loading'
-
+import { profileInterface, reposInterface } from '../../interfaces'
 import './Profile.scss'
 
 const searchService: SearchService = new SearchService();
 
-interface avatar {
-  avatar_url: string,
-  name: string,
-  bio: string,
-  location: string,
-  html_url: string,
-  login: string
-}
-
-interface repos {
-  name: string,
-  stargazers_count: number,
-  description: string
-}
-
 const Profile: FC = (props: any) => {
   const [loading, setLoading] = useState(true)
-  let [profile, setProfile] = useState(({} as avatar));
-  let [repos, setRepos] = useState(([] as Array<repos>));
+  const [profile, setProfile] = useState(({} as profileInterface));
+  const [repos, setRepos] = useState(([] as Array<reposInterface>));
 
   useEffect(() => {
     (async () => {
+      setLoading(true)
+
       let data = await searchService.loadProfile(props.match.params.name)
       if (data.message === "Not Found") props.history.push('/limbo')
       let repositories = await searchService.loadRepositories(props.match.params.name)
@@ -39,8 +26,6 @@ const Profile: FC = (props: any) => {
       setLoading(false)
       setRepos(repositories)
       setProfile(data)
-
-      console.log(data)
     })()
   }, [props])
 
