@@ -5,4 +5,11 @@ export default class SearchService {
 
     return data
   }
+
+  async loadRepositories(username: string) {
+    let response = await fetch(`https://api.github.com/users/${username}/starred`)
+    let data = await response.json()
+
+    return data
+  }
 }

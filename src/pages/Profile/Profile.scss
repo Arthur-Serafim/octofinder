@@ -20,5 +20,94 @@
     margin-top: 25px;
     border: 1px solid #252525;
     margin-bottom: 25px;
+
+    &-default {
+      height: 180px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+  }
+}
+
+.repos {
+  margin-bottom: 25px;
+
+  &-title {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #FFFFFF;
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-name {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  &-star {
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    margin-left: auto;
+    font-size: 12px;
+    opacity: .75;
+  }
+
+  &-icon {
+    margin-left: 5px;
+    font-size: 14px;
+  }
+
+  &-description {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  &-container {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+}
+
+.img-aligner {
+  width: 230px;
+  height: 230px;
+  position: relative;
+}
+
+.open-link {
+  position: absolute;
+  color: white;
+  top: 0px;
+  right: 0px;
+  background: rgba(0, 0, 0, .5);
+  padding: 10px;
+  border-radius: 0 15px 0 10px;
+  cursor: pointer;
+  transition: all .3s;
+
+  &:hover {
+    background: rgba(0, 0, 0, .75);
   }
 }
