@@ -61,7 +61,7 @@ const Profile: FC = (props: any) => {
           <h2 className="section-title">{profile.name ? profile.name : profile.login}</h2>
           <h2 className="section-description">{profile.bio ? profile.bio : 'Este perfil não possui uma biografia!'}</h2>
           <iframe
-            src={profile.location ? `https://www.google.com/maps/embed/v1/place?key=AIzaSyAw0F7TrsEvwq3DbfDwHbQoAPefdnacOfE&q=${profile.location}` : `https://www.google.com/maps/embed/v1/place?key=AIzaSyAw0F7TrsEvwq3DbfDwHbQoAPefdnacOfE&q=greenland`}
+            src={profile.location ? `https://www.google.com/maps/embed/v1/place?key=<API_KEY>&q=${profile.location}` : `https://www.google.com/maps/embed/v1/place?key=AIzaSyAw0F7TrsEvwq3DbfDwHbQoAPefdnacOfE&q=greenland`}
             title="Profile Map"
             height="450px"
             width="100%"
