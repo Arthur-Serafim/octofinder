@@ -14,9 +14,9 @@ function App() {
       <Router>
         <Route exact path="/" component={Home} />
         <Route exact path="/404" component={NotFound} />
-        <Route exact path="/perfil/:id" component={Profile} />
+        <Route exact path="/perfil/:name" component={Profile} />
+        <Route path="/" component={Footer} />
       </Router>
-      <Footer />
     </div>
   );
 }

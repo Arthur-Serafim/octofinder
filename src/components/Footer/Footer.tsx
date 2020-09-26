@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
-import './Footer.scss'
+import React, { useState, FunctionComponent as FC } from 'react';
+import { RouteComponentProps } from 'react-router-dom';
+import './Footer.scss';
 
-export default function Footer() {
+const Footer: FC<RouteComponentProps> = (props: any) => {
   const [username, setUsername] = useState('')
 
   function handleSubmit(e: any) {
     e.preventDefault()
-
-    alert(username)
+    console.log(props)
+    props.history.push(`/perfil/${username}`)
   }
 
   return (
@@ -21,3 +22,5 @@ export default function Footer() {
     </footer>
   )
 }
+
+export default Footer

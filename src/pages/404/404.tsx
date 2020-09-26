@@ -1,8 +1,10 @@
-import * as React from 'react';
+import React, { FunctionComponent as FC } from 'react';
 import './404.scss'
 
-export default function NotFound() {
+const NotFound: FC = () => {
   return (
-    <></>
+    <div className="section"></div>
   )
 }
+
+export default NotFound

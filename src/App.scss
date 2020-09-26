@@ -6,3 +6,40 @@
   width: 100%;
   background: #332255;
 }
+
+.section {
+  height: calc(100vh - 185px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 50px;
+  overflow: auto;
+  
+  &-title {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 32px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+
+  &-description {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  &-image {
+    width: 90%;
+    margin-top: 25px;
+  }
+}

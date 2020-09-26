@@ -1,7 +1,24 @@
-import * as React from 'react';
+import React, { useEffect, useRef, FunctionComponent as FC } from 'react';
+import SearchService from '../../services/SearchService'
 
-export default function Profile() {
+const searchService: SearchService = new SearchService();
+
+const Profile: FC = (props: any) => {
+  let profile = useRef({});
+
+  useEffect(() => {
+    (async () => {
+      let data = await searchService.loadProfile(props.match.params.name)
+
+      if (data.message === "Not Found") props.history.push('/404')
+
+      profile.current = data
+    })()
+  }, [props])
+
   return (
-    <></>
+    <div className="section"></div>
   )
 }
+
+export default Profile

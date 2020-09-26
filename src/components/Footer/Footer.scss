@@ -1,14 +1,10 @@
 .footer {
   &-container {
     width: 100%;
-    height: 110px;
+    height: 135px;
     background: #332255;
-    border-top: rgba(0, 0, 0, .2);
+    border-top: 2px solid rgba(0, 0, 0, .1);
     box-sizing: border-box;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   &-input {
@@ -36,12 +32,18 @@
     border: none;
     box-shadow: none;
     border-radius: 5px;
-    margin-top: 15px;
     outline: none;
   }
 
   &-form {
     width: 100%;
     height: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
   }
 }
