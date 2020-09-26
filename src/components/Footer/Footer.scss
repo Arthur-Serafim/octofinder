@@ -1,0 +1,47 @@
+.footer {
+  &-container {
+    width: 100%;
+    height: 110px;
+    background: #332255;
+    border-top: rgba(0, 0, 0, .2);
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-input {
+    width: 100%;
+    box-shadow: none;
+    border: none;
+    background: rgba(0, 0, 0, .2);
+    height: 35px;
+    border-radius: 5px;
+    padding: 0 15px;
+    color: rgba(255, 255, 255, .35);
+    box-sizing: border-box;
+    outline: none;
+  }
+
+  &-button {
+    width: 100%;
+    height: 35px;
+    background: #7D00FF;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border: none;
+    box-shadow: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    outline: none;
+  }
+
+  &-form {
+    width: 100%;
+    height: 100%;
+  }
+}
