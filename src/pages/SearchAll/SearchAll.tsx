@@ -15,10 +15,13 @@ const SearchAll: FC = (props: any) => {
       setLoading(true)
 
       let data = await searchService.loadAllProfiles(props.match.params.name)
-      if (data[0].message === "Not Found") props.history.push('/limbo')
 
-      setLoading(false)
-      setProfiles(data)
+      if (data[0].message === "Not Found") {
+        props.history.push('/limbo')
+      } else {
+        setLoading(false)
+        setProfiles(data)
+      }
     })()
   }, [props])
 

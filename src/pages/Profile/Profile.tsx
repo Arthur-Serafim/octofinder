@@ -16,16 +16,20 @@ const Profile: FC = (props: any) => {
       setLoading(true)
 
       let data = await searchService.loadProfile(props.match.params.name)
-      if (data.message === "Not Found") props.history.push('/limbo')
-      let repositories = await searchService.loadRepositories(data.login)
 
-      if (data.location) {
-        data.location = data.location.split(' ').join('+')
+      if (data.message === "Not Found") {
+        props.history.push('/limbo')
+      } else {
+        let repositories = await searchService.loadRepositories(data.login)
+
+        if (data.location) {
+          data.location = data.location.split(' ').join('+')
+        }
+
+        setLoading(false)
+        setRepos(repositories)
+        setProfile(data)
       }
-
-      setLoading(false)
-      setRepos(repositories)
-      setProfile(data)
     })()
   }, [props])
 
