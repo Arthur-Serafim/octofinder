@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer'
 import Home from './pages/Home/Home'
 import Profile from './pages/Profile/Profile'
 import NotFound from './pages/404/404'
+import SearchAll from './pages/SearchAll/SearchAll';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/limbo" component={NotFound} />
           <Route exact path="/perfil/:name" component={Profile} />
+          <Route exact path="/procurar/:name" component={SearchAll} />
           <Route path="/" component={NotFound} />
         </Switch>
         <Route path="/" component={Footer} />

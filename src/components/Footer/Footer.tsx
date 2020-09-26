@@ -9,7 +9,7 @@ const Footer: FC<RouteComponentProps> = (props: any) => {
     e.preventDefault()
     setUsername('')
 
-    props.history.push(`/perfil/${username}`)
+    props.history.push(`/procurar/${username}`)
   }
 
   return (

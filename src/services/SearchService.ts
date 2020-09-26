@@ -12,4 +12,16 @@ export default class SearchService {
 
     return data
   }
+
+  async loadAllProfiles(username: string) {
+    let response = await fetch(`https://api.github.com/search/users?q=${username}`)
+    let data = await response.json()
+
+    if (data.items.length > 0) {
+      return data.items
+    } else {
+      return [{ message: 'Not Found' }]
+    }
+
+  }
 }

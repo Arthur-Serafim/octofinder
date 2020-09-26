@@ -17,7 +17,7 @@ const Profile: FC = (props: any) => {
 
       let data = await searchService.loadProfile(props.match.params.name)
       if (data.message === "Not Found") props.history.push('/limbo')
-      let repositories = await searchService.loadRepositories(props.match.params.name)
+      let repositories = await searchService.loadRepositories(data.login)
 
       if (data.location) {
         data.location = data.location.split(' ').join('+')
@@ -59,7 +59,7 @@ const Profile: FC = (props: any) => {
               Repositórios Favoritados
             </h3>
             {repos.map(repo => (
-              <div className="repos">
+              <div className="repos" key={repo.url}>
                 <div className="repos-title">
                   <span className="repos-name">
                     {repo.name}

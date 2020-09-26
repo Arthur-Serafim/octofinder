@@ -10,5 +10,6 @@ export interface profileInterface {
 export interface reposInterface {
   name: string,
   stargazers_count: number,
-  description: string
+  description: string,
+  url: string
 }
